@@ -78,9 +78,10 @@ function consultarProduto() {
     return;
   }
 
-  const encontrado = produtos.find(
-    (p) => p.id === input || p.nome.toLowerCase().includes(input.toLowerCase()),
-  );
+  const porId = produtos.find((p) => p.id === input);
+  const encontrado =
+    porId ||
+    produtos.find((p) => p.nome.toLowerCase().includes(input.toLowerCase()));
 
   if (encontrado) {
     resultado.style.color = "#1a56a0";
