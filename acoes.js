@@ -93,7 +93,7 @@ const produtos = [
   {
     id: "5",
     nome: "Bomba Industrial 5cv",
-    img: "./img/BombaIndustrial5cv.webp",
+    img: "./img/bombaIndustrial5cv.webp",
     descricao: "Eficiência máxima para poços e reservatórios.",
     preco: "R$ 4.300,00",
   },
@@ -101,6 +101,7 @@ const produtos = [
 
 function consultarProduto() {
   const input = document.getElementById("input-consulta").value.trim();
+
   const resultado = document.getElementById("resultado-consulta");
 
   resultado.innerHTML = "";
