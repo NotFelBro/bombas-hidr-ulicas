@@ -58,7 +58,13 @@ function abrirConsulta() {
   document.getElementById("card-boas-vindas").style.display = "none";
   document.getElementById("card-consulta").style.display = "flex";
   document.getElementById("resultado-consulta").textContent = "";
-  document.getElementById("input-consulta").value = "";
+
+  const input = document.getElementById("input-consulta");
+  input.value = "";
+
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") consultarProduto();
+  });
 }
 
 const produtos = [
