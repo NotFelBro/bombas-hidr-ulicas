@@ -486,3 +486,66 @@ body.sistema-body {
   font-size: 14px;
   color: #555555;
 }
+
+/* consulta */
+
+.card-consulta {
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 40px 48px;
+  width: 420px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-consulta h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a56a0;
+  text-align: center;
+}
+
+.campo-consulta {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-consulta input {
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  outline: none;
+}
+
+.campo-consulta input:focus {
+  border-color: #1a56a0;
+}
+
+.btn-consultar-produto {
+  background-color: #28a745;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.btn-consultar-produto:hover {
+  background-color: #218838;
+}
+
+.resultado-consulta {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  min-height: 20px;
+}

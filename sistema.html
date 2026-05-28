@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/bomba.css" />
-    <script src="acoes.js"></script>
+
     <title>Bomba Hidráulica</title>
   </head>
   <body class="sistema-body">
@@ -17,15 +17,30 @@
 
     <div class="sistema-wrapper">
       <aside class="sistema-sidebar">
-        <button class="btn-consultar">Consultar Produto</button>
+        <button class="btn-consultar" onclick="abrirConsulta()">
+          Consultar Produto
+        </button>
       </aside>
 
       <main class="sistema-main">
-        <div class="boas-vindas">
+        <div class="boas-vindas" id="card-boas-vindas">
           <h2>Bem-vindo</h2>
           <p>Selecione uma opção no menu lateral.</p>
         </div>
+
+        <div class="card-consulta" id="card-consulta">
+          <h2>Consulta de Bombas</h2>
+          <div class="campo-consulta">
+            <input type="text" id="input-consulta" placeholder="" />
+          </div>
+          <button class="btn-consultar-produto" onclick="consultarProduto()">
+            Consultar
+          </button>
+          <p class="resultado-consulta" id="resultado-consulta"></p>
+        </div>
       </main>
     </div>
+
+    <script src="acoes.js"></script>
   </body>
 </html>
