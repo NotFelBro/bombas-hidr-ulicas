@@ -43,15 +43,18 @@ nav.selecao div a {
   color: #333333;
 }
 
-nav.selecao .home a {
-  background-color: #1a56a0;
-  color: #ffffff;
-}
-
 nav.selecao .sobre a,
-nav.selecao .contato a {
+nav.selecao .contato a,
+nav.selecao .home a {
   color: #333333;
   background-color: transparent;
+}
+
+nav.selecao .home:hover a,
+nav.selecao .sobre:hover a,
+nav.selecao .contato:hover a {
+  background-color: #1a56a0;
+  color: #ffffff;
 }
 
 nav.selecao .login a {
