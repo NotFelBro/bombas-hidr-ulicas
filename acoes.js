@@ -62,21 +62,50 @@ function abrirConsulta() {
 }
 
 const produtos = [
-  { id: "1", nome: "Bomba Alta Pressão 1cv" },
-  { id: "2", nome: "Bomba Submersível 2cv" },
-  { id: "3", nome: "Bomba Centrífuga 3cv" },
-  { id: "4", nome: "Bomba de Poço 0.5cv" },
-  { id: "5", nome: "Bomba Industrial 5cv" },
+  {
+    id: "1",
+    nome: "Bomba Alta Pressão 1cv",
+    img: "./img/bomba1cv.jpeg",
+    descricao: "Ideal para prédios e sistemas que exigem força total.",
+    preco: "R$ 1.200,00",
+  },
+  {
+    id: "2",
+    nome: "Bomba Submersível 2cv",
+    img: "./img/bombasubmersivel2cv.webp",
+    descricao: "Projetada para trabalhar dentro da água com alta eficiência.",
+    preco: "R$ 1.800,00",
+  },
+  {
+    id: "3",
+    nome: "Bomba Centrífuga 3cv",
+    img: "./img/bombacentrifuga3cv.webp",
+    descricao: "Ideal para grandes sistemas hidráulicos industriais.",
+    preco: "R$ 2.500,00",
+  },
+  {
+    id: "4",
+    nome: "Bomba de Poço 0.5cv",
+    img: "./img/bombadepoco05cv.webp",
+    descricao: "Potência e durabilidade para grandes vazões.",
+    preco: "R$ 950,00",
+  },
+  {
+    id: "5",
+    nome: "Bomba Industrial 5cv",
+    img: "./img/BombaIndustrial5cv.webp",
+    descricao: "Eficiência máxima para poços e reservatórios.",
+    preco: "R$ 4.300,00",
+  },
 ];
 
 function consultarProduto() {
   const input = document.getElementById("input-consulta").value.trim();
   const resultado = document.getElementById("resultado-consulta");
 
-  if (input === "") {
-    resultado.textContent = "";
-    return;
-  }
+  resultado.innerHTML = "";
+
+  if (input === "") return;
 
   const porId = produtos.find((p) => p.id === input);
   const encontrado =
@@ -84,10 +113,17 @@ function consultarProduto() {
     produtos.find((p) => p.nome.toLowerCase().includes(input.toLowerCase()));
 
   if (encontrado) {
-    resultado.style.color = "#1a56a0";
-    resultado.textContent = "Produto encontrado: " + encontrado.nome;
+    resultado.innerHTML = `
+      <div class="produto-card">
+        <img src="${encontrado.img}" alt="${encontrado.nome}" class="produto-img" />
+        <div class="produto-info">
+          <h3 class="produto-nome">${encontrado.nome}</h3>
+          <p class="produto-descricao">${encontrado.descricao}</p>
+          <p class="produto-preco">${encontrado.preco}</p>
+        </div>
+      </div>
+    `;
   } else {
-    resultado.style.color = "#e53935";
-    resultado.textContent = "Produto não encontrado!";
+    resultado.innerHTML = `<p class="produto-nao-encontrado">Produto não encontrado!</p>`;
   }
 }
